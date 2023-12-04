@@ -40,7 +40,7 @@ function simonSays (){
 
             result.innerText = `You got ${points} out of 5 right!`;
         }, 1000);
-    }, 3*1000);
+    }, 30*1000);
 }
 
 function arrayGen (){
