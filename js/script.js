@@ -15,13 +15,14 @@ function simonSays (){
         list.appendChild(li);
     }
 
+    let result = document.getElementById("result");
     setTimeout(function(){
         list.style.display = 'none';
         
         setTimeout(function(){
             let userArray = [];
-            let points = 0;
             let j = 0;
+            let points = 0;
         
             while(j<5){
                 let insert = parseInt(prompt("Insert a number from before!"));
@@ -37,10 +38,9 @@ function simonSays (){
             console.log(userArray);
             console.log(points);
 
+            result.innerText = `You got ${points} out of 5 right!`;
         }, 1000);
     }, 3*1000);
-
-    
 }
 
 function arrayGen (){
