@@ -1,12 +1,14 @@
-simonSays();
+const playBtn = document.getElementById("play-button");
+
+playBtn.addEventListener('click', simonSays);
 
 function simonSays (){
     let list = document.getElementById("numbers-list");
-
+    
     let array = [];
     array = arrayGen();
-    //console.log(array);
-
+    console.log(array);
+    
     for(let i = 0; i<5; i++){
         let li = document.createElement("li");
         li.innerText = array[i];
@@ -15,7 +17,30 @@ function simonSays (){
 
     setTimeout(function(){
         list.style.display = 'none';
-    }, 30*1000)
+        
+        setTimeout(function(){
+            let userArray = [];
+            let points = 0;
+            let j = 0;
+        
+            while(j<5){
+                let insert = parseInt(prompt("Insert a number from before!"));
+                if (!userArray.includes(insert) && !isNaN(insert)){
+                    userArray.push(insert);
+                    j++;
+                    if(array.includes(insert)){
+                        points++;
+                    }
+                }
+            }
+            
+            console.log(userArray);
+            console.log(points);
+
+        }, 1000);
+    }, 3*1000);
+
+    
 }
 
 function arrayGen (){
